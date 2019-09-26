@@ -1,0 +1,12 @@
+<h2>Latest posts:</h2>
+<table class="table">
+	<% @results.each do |post| %>
+	<tr>
+		<td><%= post['content'] %></td>
+		<td style="text-align:right">Added at <%= post['created_date'] %></td>
+		<td><a href="/details/<%= post['id'] %>">Comments</a></td>
+	
+	</tr>
+	<% end %>
+</table>
+

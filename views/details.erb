@@ -1,0 +1,28 @@
+<h2>Details post:</h2>
+
+<p>
+	<%= @row['content'] %>
+	<br>
+	Added at <% @row['created_date'] %>
+</p>
+<br>
+
+Comments:
+
+<% @comments.each do |comment| %>
+	<p>
+		<%= comment['content'] %>
+	</p>
+
+	<hr>
+<% end %>
+
+
+<h4>Comments:</h4>
+<form action="/details/<%= @row['id'] %>" method="POST">
+  <div class="form-group">
+  <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+  <br>
+  <button type="submit" class="btn btn-primary">Add comment</button>
+</form>
+
